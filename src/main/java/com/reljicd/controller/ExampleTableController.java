@@ -14,7 +14,7 @@ import java.util.Collection;
 @RestController
 public class ExampleTableController {
 
-    private static final String TEXT_FIELD_1_ENDPOINT = "/api/text_field_1/";
+    static final String TEXT_FIELD_1_ENDPOINT = "/api/text_field_1/";
 
     private ExampleTableService ExampleTableService;
 
