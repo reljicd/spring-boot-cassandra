@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  spring-boot-cassandra:
+    build:
+      context: ../
+      dockerfile: docker/spring-boot-cassandra/Dockerfile
+    ports:
+     - "9003:9003"
+    environment:
+      SPRING_DATA_CASSANDRA_CONTACT_POINTS: cassandra
+    container_name: ${CONTAINER_NAME}
+    entrypoint: /wait-for-it.sh cassandra:9042 -- java -Djava.security.egd=file:/dev/./urandom -jar app.jar
+    depends_on:
+      - "cassandra"
+  cassandra:
+    build:
+      context: ../
+      dockerfile: docker/cassandra/Dockerfile
+    ports:
+     - "9042:9042"
+    container_name: cassandra
+
+networks:
+  default:
+    driver: bridge
