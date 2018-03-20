@@ -68,13 +68,13 @@ public class ExampleTable {
     @PrimaryKeyClass
     public static class ExampleTablePrimaryKey implements Serializable {
 
-        @PrimaryKeyColumn(type = PrimaryKeyType.PARTITIONED)
+        @PrimaryKeyColumn(name = "text_field_1", type = PrimaryKeyType.PARTITIONED)
         private String textField1;
-        @PrimaryKeyColumn(type = PrimaryKeyType.CLUSTERED)
+        @PrimaryKeyColumn(name = "text_field_2", type = PrimaryKeyType.CLUSTERED)
         private String textField2;
-        @PrimaryKeyColumn(type = PrimaryKeyType.CLUSTERED)
+        @PrimaryKeyColumn(name = "int_field_1", type = PrimaryKeyType.CLUSTERED)
         private int intField1;
-        @PrimaryKeyColumn(type = PrimaryKeyType.CLUSTERED)
+        @PrimaryKeyColumn(name = "int_field_2", type = PrimaryKeyType.CLUSTERED)
         private int intField2;
 
         public ExampleTablePrimaryKey(String textField1,
