@@ -30,10 +30,10 @@ public class ExampleTableDTO {
 
     public static ExampleTableDTO instanceOf(ExampleTable ExampleTable) {
         return new ExampleTableDTO(
-                ExampleTable.getExampleTablePrimaryKey().getTextField2(),
+                ExampleTable.getExampleTablePrimaryKey().getTextField1(),
                 ExampleTable.getExampleTablePrimaryKey().getTextField2(),
                 ExampleTable.getExampleTablePrimaryKey().getIntField1(),
-                ExampleTable.getExampleTablePrimaryKey().getIntField1()
+                ExampleTable.getExampleTablePrimaryKey().getIntField2()
         );
     }
 
