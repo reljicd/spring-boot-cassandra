@@ -1,6 +1,7 @@
 FROM cassandra:3.11
 
-# replace Docker's official entrypoint here
+EXPOSE 9042
+
 COPY docker/cassandra/docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod a+x docker-entrypoint.sh
 
