@@ -7,7 +7,7 @@ echo -e "\nSet docker image name as ${IMAGE_NAME}\n"
 PORT=9003
 echo -e "Set docker image PORT to ${PORT}\n"
 
-echo -e "Maven package...\n"
+echo -e "Create uber jar...\n"
 mvn package
 
 echo -e "\nStop running Docker containers with image tag ${CONTAINER_NAME}...\n"

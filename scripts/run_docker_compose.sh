@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 
-export CONTAINER_NAME=spring-boot-cassandra
-echo -e "\nSet docker container name as ${CONTAINER_NAME}\n"
+echo -e "Create uber jar...\n"
+mvn package
 
-echo -e "\nStop running Docker containers with container name ${CONTAINER_NAME}...\n"
-docker stop $(docker ps -a | grep ${CONTAINER_NAME} | awk '{print $1}')
+echo -e "\nStop running Docker containers with container name spring-boot-cassandra, and remove them...\n"
+docker stop $(docker ps -a | grep spring-boot-cassandra | awk '{print $1}')
+docker rm $(docker ps -a | grep spring-boot-cassandra | awk '{print $1}')
 
-echo -e "\nStop and delete Cassandra containers... \n"
+echo -e "\nStop running Docker containers with container name cassandra, and remove them...\n"
 docker stop $(docker ps -a | grep cassandra | awk '{print $1}')
 docker rm $(docker ps -a | grep cassandra | awk '{print $1}')
 
